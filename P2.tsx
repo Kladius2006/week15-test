@@ -7,6 +7,8 @@ export default function Player2() {
       <Text>This is Player2</Text>
       <StatusBar style="auto" />
     </View>
+
+    
   );
 }
 

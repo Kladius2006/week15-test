@@ -5,6 +5,12 @@ import Player1 from './P1';
 import Player2 from './P2';
 import Result from './Result';
 
+type Player1Props = {
+  choice1: string | undefined;
+  setChoice1: React.Dispatch<React.SetStateAction<string | undefined>>;
+};
+
+
 export default function App() {
 
   const [page, setPage] = useState('page1'); //useState for shuffling page
@@ -15,37 +21,6 @@ export default function App() {
         {page === 'page1' && <Player1 />}
         {page === 'page2' && <Player2 />}
         {page === 'page3' && <Result />}
-
-      {/* BOTTOM MENU */}
-      <View style={styles.bottomMenu}>
-
-        {/* PAGE 1 */}
-        <TouchableOpacity
-          style={styles.menuButton}
-          onPress={() => setPage('page1')}
-        >
-          <Text style={styles.menuItem}>P1</Text>
-        </TouchableOpacity>
-
-
-        {/* PAGE 2 */}
-        <TouchableOpacity
-          style={styles.menuButton}
-          onPress={() => setPage('page2')}
-        >
-          <Text style={styles.menuItem}>P2</Text>
-        </TouchableOpacity>
-
-
-        {/* PAGE3 */}
-        <TouchableOpacity
-          style={styles.menuButton}
-          onPress={() => setPage('page3')}
-        >
-          <Text style={styles.menuItem}>Result</Text>
-        </TouchableOpacity>
-
-      </View>  
     </View>
   );
 }
@@ -54,8 +29,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   bottomMenu: {
     position: 'absolute',

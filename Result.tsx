@@ -1,7 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Pressable } from 'react-native';
+import { useState } from 'react';
 
 export default function Result() {
+
   return (
     <View style={styles.container}>
       <Text>This is Result</Text>

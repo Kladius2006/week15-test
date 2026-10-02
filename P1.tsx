@@ -1,11 +1,43 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { useState } from 'react';
+
+export type Player1 = {
+    choice1: string|undefined;
+  };
 
 export default function Player1() {
+
+  const [choice1, setChoice1] = useState<string|undefined>();
+  
+
   return (
     <View style={styles.container}>
+        
       <Text>This is Player1</Text>
       <StatusBar style="auto" />
+
+      {/*Buttons*/}
+      <View style={styles.verticalContainer}>
+        <TouchableOpacity 
+        style={styles.buttons}
+        onPress={() => setChoice1("Rock")}>
+            <Text>Rock</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity 
+        style={styles.buttons}
+        onPress={() => setChoice1("Paper")}>
+            <Text>Paper</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity 
+        style={styles.buttons}
+        onPress={() => setChoice1("Scissors")}>
+            <Text>Scissors</Text>
+        </TouchableOpacity>
+      </View>
+
     </View>
   );
 }
@@ -17,4 +49,23 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  verticalContainer: {
+    flex:1,
+    width: '50%',
+    paddingTop: 20,
+    paddingBottom: 20,
+    flexDirection: 'column',
+  },
+  buttons: {
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+    borderLeftWidth: 1,
+    borderRightWidth: 1,
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#3abad7',
+    paddingTop: 20,
+    paddingBottom: 20,
+  }
 });

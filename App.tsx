@@ -5,22 +5,18 @@ import Player1 from './P1';
 import Player2 from './P2';
 import Result from './Result';
 
-type Player1Props = {
-  choice1: string | undefined;
-  setChoice1: React.Dispatch<React.SetStateAction<string | undefined>>;
-};
-
-
 export default function App() {
 
   const [page, setPage] = useState('page1'); //useState for shuffling page
+  const [choice1, setChoice1] = useState<string|undefined>(); //player1's choice owned by main file
+  const [choice2, setChoice2] = useState<string|undefined>(); //player2's choice owned by main file
 
   return (
     <View style={styles.container}>
       {/* Pages Content */}
-        {page === 'page1' && <Player1 />}
-        {page === 'page2' && <Player2 />}
-        {page === 'page3' && <Result />}
+        {page === 'page1' && <Player1 choice1={choice1} setChoice1={setChoice1} onChoose={() => setPage('page2')} />}
+        {page === 'page2' && <Player2 choice2={choice2} setChoice2={setChoice2} onChoose={() => setPage('page3')}/>}
+        {page === 'page3' && <Result choice1={choice1} choice2={choice2}/>}
     </View>
   );
 }

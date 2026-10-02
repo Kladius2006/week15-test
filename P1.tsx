@@ -2,15 +2,18 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { useState } from 'react';
 
-export type Player1 = {
-    choice1: string|undefined;
-  };
+type Player1Props = {
+  choice1: string | undefined;
+  setChoice1: React.Dispatch<React.SetStateAction<string | undefined>>;
+  onChoose: () => void;
+};
 
-export default function Player1() {
-
-  const [choice1, setChoice1] = useState<string|undefined>();
+export default function Player1({
+    choice1,
+    setChoice1,
+    onChoose,
+}: Player1Props) {
   
-
   return (
     <View style={styles.container}>
         
@@ -22,6 +25,7 @@ export default function Player1() {
         <TouchableOpacity 
         style={styles.buttons}
         onPress={() => setChoice1("Rock")}>
+        onPress={onChoose}
             <Text>Rock</Text>
         </TouchableOpacity>
 

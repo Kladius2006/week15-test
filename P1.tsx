@@ -41,6 +41,7 @@ export default function Player1({
       <View style={styles.verticalContainer}>
 
         <TouchableOpacity
+          testID='p1rock'
           style={styles.buttons}
           onPress={ChooseRock}>
           <Text style={styles.emoji}>🪨</Text>
@@ -48,6 +49,7 @@ export default function Player1({
         </TouchableOpacity>
 
         <TouchableOpacity
+          testID='p1paper'
           style={styles.buttons}
           onPress={ChoosePaper}>
           <Text style={styles.emoji}>📃</Text>
@@ -55,6 +57,7 @@ export default function Player1({
         </TouchableOpacity>
 
         <TouchableOpacity
+          testID='p1scissors'
           style={styles.buttons}
           onPress={ChooseScissors}>
           <Text style={styles.emoji}>✂️</Text>

@@ -1,3 +1,230 @@
 appId: com.kladius2006.week15test
 ---
 - launchApp
+
+#Start Round1
+- assertVisible: "ROCK PAPER SCISSORS"
+- assertVisible: "Player 1"
+- assertVisible: "Choose your weapon"
+- assertVisible: "Rock"
+- assertVisible: "🪨"
+- assertVisible: "Paper"
+- assertVisible: "📃"
+- assertVisible: "Scissors"
+- assertVisible: "✂️"
+
+- tapOn:
+    id: p1rock
+- assertTrue: choice1 === "Rock"
+
+- assertVisible: "ROCK PAPER SCISSORS"
+- assertVisible: "Player 2"
+- assertVisible: "Choose your weapon"
+- assertVisible: "Rock"
+- assertVisible: "🪨"
+- assertVisible: "Paper"
+- assertVisible: "📃"
+- assertVisible: "Scissors"
+- assertVisible: "✂️"
+
+- tapOn: 
+    id: p2rock
+- assertTrue: choice2 === "Rock"
+
+- assertVisible: "ROCK PAPER SCISSORS"
+- assertVisible: "Result"
+- assertVisible: "PLAYER 1"
+- assertVisible: "🪨"
+- assertVisible: "Rock"
+- assertVisible: "PLAYER 2"
+- assertVisible: "🪨"
+- assertVisible: "Rock"
+- assertVisible: "WINNER"
+- assertVisible: "Draw"
+- assertVisible: "Play Again"
+- assertTrue: winner === "Draw"
+#Finish
+
+- tapOn: 
+    id: retry
+
+#Start Round2
+- assertVisible: "ROCK PAPER SCISSORS"
+- assertVisible: "Player 1"
+- assertVisible: "Choose your weapon"
+- assertVisible: "Rock"
+- assertVisible: "🪨"
+- assertVisible: "Paper"
+- assertVisible: "📃"
+- assertVisible: "Scissors"
+- assertVisible: "✂️"
+
+- tapOn: 
+    id: p1rock
+- assertTrue: choice1 === "Rock"
+
+- assertVisible: "ROCK PAPER SCISSORS"
+- assertVisible: "Player 2"
+- assertVisible: "Choose your weapon"
+- assertVisible: "Rock"
+- assertVisible: "🪨"
+- assertVisible: "Paper"
+- assertVisible: "📃"
+- assertVisible: "Scissors"
+- assertVisible: "✂️"
+
+- tapOn: 
+    id: p2paper
+- assertTrue: choice2 === "Paper"
+
+- assertVisible: "ROCK PAPER SCISSORS"
+- assertVisible: "Result"
+- assertVisible: "PLAYER 1"
+- assertVisible: "🪨"
+- assertVisible: "Rock"
+- assertVisible: "PLAYER 2"
+- assertVisible: "📃"
+- assertVisible: "Paper"
+- assertVisible: "WINNER"
+- assertVisible: "Player2"
+- assertVisible: "Play Again"
+- assertTrue: winner === "Player2"
+#Finish
+
+- tapOn: 
+    id: retry
+
+#Start Round3
+- assertVisible: "ROCK PAPER SCISSORS"
+- assertVisible: "Player 1"
+- assertVisible: "Choose your weapon"
+- assertVisible: "Rock"
+- assertVisible: "🪨"
+- assertVisible: "Paper"
+- assertVisible: "📃"
+- assertVisible: "Scissors"
+- assertVisible: "✂️"
+
+- tapOn: 
+    id: p1rock
+- assertTrue: choice1 === "Rock"
+
+- assertVisible: "ROCK PAPER SCISSORS"
+- assertVisible: "Player 2"
+- assertVisible: "Choose your weapon"
+- assertVisible: "Rock"
+- assertVisible: "🪨"
+- assertVisible: "Paper"
+- assertVisible: "📃"
+- assertVisible: "Scissors"
+- assertVisible: "✂️"
+
+- tapOn: 
+    id: p2scissors
+- assertTrue: choice2 === "Scissors"
+
+- assertVisible: "ROCK PAPER SCISSORS"
+- assertVisible: "Result"
+- assertVisible: "PLAYER 1"
+- assertVisible: "🪨"
+- assertVisible: "Rock"
+- assertVisible: "PLAYER 2"
+- assertVisible: "✂️"
+- assertVisible: "Scissors"
+- assertVisible: "WINNER"
+- assertVisible: "Player1"
+- assertVisible: "Play Again"
+- assertTrue: winner === "Player1"
+#Finish
+
+- tapOn: 
+    id: retry
+
+#Start Round4
+- assertVisible: "ROCK PAPER SCISSORS"
+- assertVisible: "Player 1"
+- assertVisible: "Choose your weapon"
+- assertVisible: "Rock"
+- assertVisible: "🪨"
+- assertVisible: "Paper"
+- assertVisible: "📃"
+- assertVisible: "Scissors"
+- assertVisible: "✂️"
+
+- tapOn: 
+    id: p1paper
+- assertTrue: choice1 === "Paper"
+
+- assertVisible: "ROCK PAPER SCISSORS"
+- assertVisible: "Player 2"
+- assertVisible: "Choose your weapon"
+- assertVisible: "Rock"
+- assertVisible: "🪨"
+- assertVisible: "Paper"
+- assertVisible: "📃"
+- assertVisible: "Scissors"
+- assertVisible: "✂️"
+
+- tapOn: 
+    id: p2rock
+- assertTrue: choice2 === "Rock"
+
+- assertVisible: "ROCK PAPER SCISSORS"
+- assertVisible: "Result"
+- assertVisible: "PLAYER 1"
+- assertVisible: "📃"
+- assertVisible: "Paper"
+- assertVisible: "PLAYER 2"
+- assertVisible: "🪨"
+- assertVisible: "Rock"
+- assertVisible: "WINNER"
+- assertVisible: "Player1"
+- assertVisible: "Play Again"
+- assertTrue: winner === "Player1"
+#Finish
+
+- tapOn: 
+    id: retry
+
+#Start Round5
+- assertVisible: "ROCK PAPER SCISSORS"
+- assertVisible: "Player 1"
+- assertVisible: "Choose your weapon"
+- assertVisible: "Rock"
+- assertVisible: "🪨"
+- assertVisible: "Paper"
+- assertVisible: "📃"
+- assertVisible: "Scissors"
+- assertVisible: "✂️"
+
+- tapOn: 
+    id: p1scissors
+- assertTrue: choice1 === "Scissors"
+
+- assertVisible: "ROCK PAPER SCISSORS"
+- assertVisible: "Player 2"
+- assertVisible: "Choose your weapon"
+- assertVisible: "Rock"
+- assertVisible: "🪨"
+- assertVisible: "Paper"
+- assertVisible: "📃"
+- assertVisible: "Scissors"
+- assertVisible: "✂️"
+
+- tapOn: 
+    id: p2rock
+- assertTrue: choice2 === "Rock"
+
+- assertVisible: "ROCK PAPER SCISSORS"
+- assertVisible: "Result"
+- assertVisible: "PLAYER 1"
+- assertVisible: "✂️"
+- assertVisible: "Scissors"
+- assertVisible: "PLAYER 2"
+- assertVisible: "🪨"
+- assertVisible: "Rock"
+- assertVisible: "WINNER"
+- assertVisible: "Player2"
+- assertVisible: "Play Again"
+- assertTrue: winner === "Player2"
+#Finish

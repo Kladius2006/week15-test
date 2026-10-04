@@ -98,6 +98,7 @@ export default function Result({
       </View>
 
       <TouchableOpacity
+        testID='retry'
         style={styles.retryButton}
         onPress={onChoose}>
         <Text style={styles.retryText}>

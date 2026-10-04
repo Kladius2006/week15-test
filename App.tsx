@@ -14,10 +14,11 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      {/* Pages Content */}
-        {page === 'page1' && <Player1 choice1={choice1} setChoice1={setChoice1} onChoose={() => setPage('page2')} />}
-        {page === 'page2' && <Player2 choice2={choice2} setChoice2={setChoice2} onChoose={() => setPage('page3')}/>}
-        {page === 'page3' && <Result choice1={choice1} choice2={choice2} onChoose={() => setPage('page1')} winner={winner} setWinner={setWinner}/>}
+      <StatusBar style="dark" />
+
+      {page === 'page1' && <Player1 choice1={choice1} setChoice1={setChoice1} onChoose={() => setPage('page2')} />}
+      {page === 'page2' && <Player2 choice2={choice2} setChoice2={setChoice2} onChoose={() => setPage('page3')}/>}
+      {page === 'page3' && <Result choice1={choice1} choice2={choice2} onChoose={() => setPage('page1')} winner={winner} setWinner={setWinner}/>}
     </View>
   );
 }
@@ -25,35 +26,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-  },
-  bottomMenu: {
-    position: 'absolute',
-    bottom: 50,
-    left: 0,
-    right: 0,
-
-    height: 70,
-
-    flexDirection: 'row',
-
-    borderTopWidth: 1,
-    borderTopColor: '#000000',
-  },
-  menuButton: {
-    flex: 1,
-    height: '100%',
-
-    justifyContent: 'center',
-    alignItems: 'center',
-
-    borderLeftWidth: 1,
-    borderLeftColor: '#000',
-
-    backgroundColor: '#207820',
-  },
-  menuItem: {
-    fontSize: 20,
-    color: '#fff',
+    backgroundColor: '#F4F7FB',
   },
 });

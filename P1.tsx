@@ -13,6 +13,19 @@ export default function Player1({
     setChoice1,
     onChoose,
 }: Player1Props) {
+
+  const ChooseRock = () =>{
+    setChoice1("Rock");
+    onChoose();
+  }
+  const ChoosePaper = () =>{
+    setChoice1("Paper");
+    onChoose();
+  }
+  const ChooseScissors = () =>{
+    setChoice1("Scissors");
+    onChoose();
+  }
   
   return (
     <View style={styles.container}>
@@ -24,21 +37,20 @@ export default function Player1({
       <View style={styles.verticalContainer}>
         <TouchableOpacity 
         style={styles.buttons}
-        onPress={() => setChoice1("Rock")}>
-        onPress={onChoose}
-            <Text>Rock</Text>
+        onPress={ChooseRock}>
+            <Text>🪨</Text>
         </TouchableOpacity>
 
         <TouchableOpacity 
         style={styles.buttons}
-        onPress={() => setChoice1("Paper")}>
-            <Text>Paper</Text>
+        onPress={ChoosePaper}>
+            <Text>📃</Text>
         </TouchableOpacity>
 
         <TouchableOpacity 
         style={styles.buttons}
-        onPress={() => setChoice1("Scissors")}>
-            <Text>Scissors</Text>
+        onPress={ChooseScissors}>
+            <Text>✂️</Text>
         </TouchableOpacity>
       </View>
 

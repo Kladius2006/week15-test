@@ -1,16 +1,55 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Pressable } from 'react-native';
+import { StyleSheet, Text, View, Pressable, TouchableOpacity } from 'react-native';
 import { useState } from 'react';
 
 type ResultProps = {
-    choice1: string|undefined;
-    choice2: string|undefined;
+    choice1: string | undefined;
+    choice2: string | undefined;
+    winner: string | undefined;
+    setWinner: React.Dispatch<React.SetStateAction<string | undefined>>;
+    onChoose() : void;
 };
 
 export default function Result({
     choice1,
-    choice2
+    choice2,
+    winner,
+    setWinner,
+    onChoose
 }:ResultProps) {
+  if (choice1 === "Rock"){
+    if(choice2 === "Rock"){
+      setWinner("Draw");
+    }
+    else if(choice2 === "Paper"){
+      setWinner("Player2");
+    }
+    else{
+      setWinner("Player1");
+    }
+  }
+  else if(choice1 === "Paper"){
+    if(choice2 === "Paper"){
+      setWinner("Draw");
+    }
+    else if(choice2 === "Scissors"){
+      setWinner("Player2");
+    }
+    else{
+      setWinner("Player1");
+    }
+  }
+  else if(choice1 === "Scissors"){
+    if(choice2 === "Scissors"){
+      setWinner("Draw");
+    }
+    else if(choice2 === "Rock"){
+      setWinner("Player2");
+    }
+    else{
+      setWinner("Player1");
+    }
+  }
 
   return (
     <View style={styles.container}>
@@ -22,16 +61,25 @@ export default function Result({
 
         <View style={styles.minorVerticalContainer}>
             <Text>
-                Player1:
+                Player1: {choice1}
             </Text>
         </View>
         <View style={styles.minorVerticalContainer}>
             <Text>
-                Player2:
+                Player2: {choice2}
             </Text>
         </View>
 
       </View>
+      <Text>
+        Winner: {winner};
+      </Text>
+
+      <TouchableOpacity onPress={onChoose}>
+        <Text>
+            Retry
+        </Text>
+      </TouchableOpacity>
 
     </View>
   );
@@ -52,11 +100,9 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
   },
   horizontalContainer: {
-    flex:1,
-    height: '10%',
-    paddingTop: 20,
-    paddingBottom: 20,
+    width: '80%',
     flexDirection: 'row',
-    rowGap: 20,
+    justifyContent: 'space-between',
+    marginVertical: 20,
   },
 });
